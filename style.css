@@ -23,3 +23,53 @@
 .book-modal.open {
     transform: translate(50%, -50%) scale(1);
 }
+
+#formSubmit {
+    /* width: 80%; */
+    display: flex;
+    flex-direction: column;
+}
+
+#pages,
+input[type="text"] {
+    height: 1.5rem;
+    border-radius: .8rem;
+    outline: none;
+    border: none;
+    padding: .3rem;
+    font-size: 1.2rem;
+    margin: .8rem 0;
+    text-align: center;
+
+}
+
+label {
+    font-size: 1.2rem;
+}
+
+input:placeholder-shown {
+    font-style: italic;
+}
+
+.check {
+    display: flex;
+    margin: .8rem 0;
+}
+
+input[type="checkbox"] {
+    margin-left: .8rem;
+}
+
+#submit {
+    padding: .8rem;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    color: #fff;
+    background-color: #000;
+    font-size: 1.2rem;
+}
+
+#submit:hover {
+    background-color: #4d4949;
+}
