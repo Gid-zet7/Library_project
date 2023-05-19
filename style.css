@@ -1,3 +1,25 @@
 :root {
     font-size: 16px;
 }
+
+.book-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    max-width: 50vw;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%) scale(0);
+    background-color: aqua;
+    padding: 3rem;
+    border-radius: 1rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    transition: transform .3s ease-in;
+
+}
+
+.book-modal.open {
+    transform: translate(50%, -50%) scale(1);
+}
