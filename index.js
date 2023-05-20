@@ -69,6 +69,16 @@ const addBook = (e) => {
   closeModal();
 };
 
+const removeBookFromDisplay = () => {
+  const bookContainer = document.querySelector(".book-container");
+
+  bookContainer.innerHTML = "";
+
+  for (let book of library.allBooks) {
+    display(book);
+  }
+};
+
 const display = (book) => {
   const bookContainer = document.querySelector(".book-container");
   const container = document.createElement("div");
@@ -112,6 +122,8 @@ const display = (book) => {
 
   removeBtn.addEventListener("click", () => {
     library.removeBook(book.title);
+    removeBookFromDisplay();
+
     // console.log(library.allBooks);
   });
 };
