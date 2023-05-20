@@ -73,3 +73,88 @@ input[type="checkbox"] {
 #submit:hover {
     background-color: #4d4949;
 }
+
+header {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .20);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+
+header h1 {
+    position: relative;
+}
+
+header h1::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: aqua;
+    left: -1rem;
+    bottom: .6rem;
+    border-radius: 50%;
+}
+
+header span {
+    color: aqua;
+    font-family: 'Lobster', cursive;
+}
+
+.add-btn {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    cursor: pointer;
+    animation: levitate 1s infinite alternate;
+    background: aqua;
+    border-radius: 50%;
+}
+
+@keyframes levitate {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+
+}
+
+.book-container {
+    display: grid;
+    gap: 1rem;
+    /* margin-top: 10rem; */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.book-container>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    /* color: #fff; */
+    background-color: #d6d1d1;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.book-container>div button {
+    margin-bottom: .5rem;
+    padding: 1rem;
+    color: #fff;
+    width: 90%;
+    font-size: 1.2rem;
+    /* background-color: #000; */
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+}
+
+
+#remove-btn {
+    background-color: #858080;
+    margin-bottom: 2rem;
+}
