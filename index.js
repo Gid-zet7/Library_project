@@ -32,3 +32,24 @@ class BookLibrary {
 }
 
 const library = new BookLibrary();
+
+const getInputFromUser = () => {
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const status = document.getElementById("status").checked;
+
+  return new Book(title, author, pages, status);
+};
+
+const resetInput = () => {
+  const title = document.getElementById("title");
+  const author = document.getElementById("author");
+  const pages = document.getElementById("pages");
+  const status = document.getElementById("status");
+
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  status.checked = false;
+};
