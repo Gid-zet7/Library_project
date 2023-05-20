@@ -64,4 +64,74 @@ const addBook = (e) => {
     library.addBookToLibrary(newBook);
     console.log(library.allBooks);
   }
+  display(newBook);
+  resetInput();
+  closeModal();
 };
+
+const display = (book) => {
+  const bookContainer = document.querySelector(".book-container");
+  const container = document.createElement("div");
+  const bookTitle = document.createElement("h3");
+  const bookAuthor = document.createElement("h3");
+  const bookPages = document.createElement("h3");
+  const statusBtn = document.createElement("button");
+  const removeBtn = document.createElement("button");
+
+  statusBtn.id = "stat-btn";
+  removeBtn.id = "remove-btn";
+
+  bookTitle.textContent = `Book title: ${book.title}`;
+  bookAuthor.textContent = `Book author: ${book.author}`;
+  bookPages.textContent = `Pages: ${book.pages}`;
+  book.isRead
+    ? (statusBtn.textContent = "Read")
+    : (statusBtn.textContent = "Not read");
+  removeBtn.textContent = "Remove";
+
+  book.isRead
+    ? (statusBtn.style.backgroundColor = "aqua")
+    : (statusBtn.style.backgroundColor = "#dd7b7b");
+
+  container.appendChild(bookTitle);
+  container.appendChild(bookAuthor);
+  container.appendChild(bookPages);
+  container.appendChild(statusBtn);
+  container.appendChild(removeBtn);
+  bookContainer.appendChild(container);
+
+  statusBtn.addEventListener("click", () => {
+    statusBtn.textContent === "Read"
+      ? (statusBtn.textContent = "Not read")
+      : (statusBtn.textContent = "Read");
+
+    statusBtn.textContent === "Read"
+      ? (statusBtn.style.backgroundColor = "aqua")
+      : (statusBtn.style.backgroundColor = "#dd7b7b");
+  });
+
+  removeBtn.addEventListener("click", () => {
+    library.removeBook(book.title);
+    // console.log(library.allBooks);
+  });
+};
+
+const form = document.getElementById("formSubmit");
+form.onsubmit = addBook;
+
+const bookModal = document.querySelector(".book-modal");
+const addBookModal = document.querySelector(".add-btn");
+const overlay = document.getElementById("overlay");
+
+const openModal = () => {
+  bookModal.classList.add("open");
+  overlay.classList.add("active");
+};
+
+const closeModal = () => {
+  bookModal.classList.remove("open");
+  overlay.classList.remove("active");
+};
+
+addBookModal.onclick = openModal;
+overlay.onclick = closeModal;
