@@ -53,3 +53,15 @@ const resetInput = () => {
   pages.value = "";
   status.checked = false;
 };
+
+const addBook = (e) => {
+  e.preventDefault();
+  newBook = getInputFromUser();
+
+  if (library.ifBookExists(newBook)) {
+    console.log("Book already exists");
+  } else {
+    library.addBookToLibrary(newBook);
+    console.log(library.allBooks);
+  }
+};
