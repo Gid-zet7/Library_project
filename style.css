@@ -15,7 +15,11 @@
     background-color: aqua;
     padding: 3rem;
     border-radius: 1rem;
+<<<<<<< HEAD
     font-family: 'Open Sans', sans-serif;
+=======
+    font-family: 'Montserrat Alternates', sans-serif;
+>>>>>>> b1eacecf4e7e002d34bd1ed1943e7a9015191c3f
     transition: transform .3s ease-in;
 
 }
@@ -109,7 +113,10 @@ header span {
     animation: levitate 1s infinite alternate;
     background: aqua;
     border-radius: 50%;
+<<<<<<< HEAD
     box-shadow: 3px 3px 3px rgba(0, 0, 0, .20);
+=======
+>>>>>>> b1eacecf4e7e002d34bd1ed1943e7a9015191c3f
 }
 
 @keyframes levitate {
