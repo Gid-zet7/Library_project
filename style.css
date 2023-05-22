@@ -183,7 +183,12 @@ header span {
         align-items: center;
     }
 
-    .book-container>div {
+    .book-container > div {
         width: 20rem;
+    }
+
+    .book-modal {
+        padding: 4rem;
+   
     }
 }
