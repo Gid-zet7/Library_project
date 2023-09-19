@@ -81,7 +81,7 @@ const removeBookFromDisplay = () => {
 
 const display = (book) => {
   const bookContainer = document.querySelector(".book-container");
-  const container = document.createElement("div");
+  const card = document.createElement("div");
   const bookTitle = document.createElement("h3");
   const bookAuthor = document.createElement("h3");
   const bookPages = document.createElement("h3");
@@ -103,12 +103,12 @@ const display = (book) => {
     ? (statusBtn.style.backgroundColor = "aqua")
     : (statusBtn.style.backgroundColor = "#dd7b7b");
 
-  container.appendChild(bookTitle);
-  container.appendChild(bookAuthor);
-  container.appendChild(bookPages);
-  container.appendChild(statusBtn);
-  container.appendChild(removeBtn);
-  bookContainer.appendChild(container);
+  card.appendChild(bookTitle);
+  card.appendChild(bookAuthor);
+  card.appendChild(bookPages);
+  card.appendChild(statusBtn);
+  card.appendChild(removeBtn);
+  bookContainer.appendChild(card);
 
   statusBtn.addEventListener("click", () => {
     statusBtn.textContent === "Read"
@@ -128,11 +128,11 @@ const display = (book) => {
   });
 };
 
-const form = document.getElementById("formSubmit");
+const form = document.getElementById("form");
 form.onsubmit = addBook;
 
 const bookModal = document.querySelector(".book-modal");
-const addBookModal = document.querySelector(".add-btn");
+const addBookModal = document.querySelector("#add-btn");
 const overlay = document.getElementById("overlay");
 
 const openModal = () => {

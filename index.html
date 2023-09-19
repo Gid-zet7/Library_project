@@ -18,7 +18,7 @@
 
 <body>
     <div class="book-modal">
-        <form id="formSubmit">
+        <form id="form">
             <label for="title">Title</label>
             <input type="text" id="title" name="title" required placeholder="title..." />
             <label for="author">Author</label>
@@ -37,18 +37,15 @@
     <div class="contents">
         <header>
             <h1>Lib <span>Track</span></h1>
-            <p>Never lose track of <span>Books</span> you have read</p>
+            <div class="header__cont">
+                <p>Never lose track of <span>Books</span> you have read</p>
+                <!-- <div class="add-btn"> -->
+                    <button id="add-btn">New Book +</button>
+                <!-- </div> -->
+            </div>
         </header>
 
-        <div class="add-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
-                <path d="M450 856V606H200v-60h250V296h60v250h250v60H510v250h-60Z" />
-            </svg>
-        </div>
-
-        <div class="book-container">
-
-        </div>
+        <div class="book-container"></div>
 
 
     </div>
