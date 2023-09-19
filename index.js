@@ -16,12 +16,12 @@ class BookLibrary {
     return this.allBooks.find((book) => book.title === title);
   }
 
-  ifBookExists(newBook) {
+  exists(newBook) {
     this.allBooks.some((book) => book.title === newBook.title);
   }
 
   addBookToLibrary(newBook) {
-    if (!this.ifBookExists(newBook)) {
+    if (!this.exists(newBook)) {
       this.allBooks.push(newBook);
     }
   }
@@ -58,18 +58,16 @@ const addBook = (e) => {
   e.preventDefault();
   newBook = getInputFromUser();
 
-  if (library.ifBookExists(newBook)) {
-    console.log("Book already exists");
-  } else {
-    library.addBookToLibrary(newBook);
-    console.log(library.allBooks);
-  }
+  library.exists(newBook)
+    ? console.log("Book already exists")
+    : library.addBookToLibrary(newBook);
+
   display(newBook);
   resetInput();
   closeModal();
 };
 
-const removeBookFromDisplay = () => {
+const refreshUI = () => {
   const bookContainer = document.querySelector(".book-container");
 
   bookContainer.innerHTML = "";
@@ -122,7 +120,7 @@ const display = (book) => {
 
   removeBtn.addEventListener("click", () => {
     library.removeBook(book.title);
-    removeBookFromDisplay();
+    refreshUI();
 
     // console.log(library.allBooks);
   });
